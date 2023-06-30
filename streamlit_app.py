@@ -58,10 +58,8 @@ def insert_row_snowflake(new_fruit):
     my_cur.execute("insert into fruit_load_list values ('" + new_fruit + "')")
     return "Thanks for adding " + new_fruit
 
-
-                   
-
-add_my_fruit = streamlit.text_input('What fruit whould you like to add?','jackfruit')
-streamlit.write(insert_row_snowflake(add_my_fruit))
+add_my_fruit = streamlit.text_input('What fruit whould you like to add?')
+if add_my_fruit:
+  streamlit.write(insert_row_snowflake(add_my_fruit))
 
 
